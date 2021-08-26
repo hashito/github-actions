@@ -13,11 +13,11 @@ jobs:
       # - env:
       #     this : is
       #     this2 : is2
-      - env: 
-          SUPER_SECRET: ${{ secrets.TEST }}
       - run: |
           echo "${{ env.this }} is pen ${{ env.this2 }} $SUPER_SECRET"
           echo "this is pen" | base64
+        env: 
+          SUPER_SECRET: ${{ secrets.TEST }}
       - run: |
           npm --version
           node --version
