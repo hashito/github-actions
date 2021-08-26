@@ -8,7 +8,7 @@ jobs:
       - uses: actions/setup-node@v1
       - run: |
           echo "this is pen"
-          base64 "this is pen"
+          echo "this is pen" | base64
       - run: |
           npm --version
           node --version
