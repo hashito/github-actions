@@ -3,18 +3,14 @@ on: [push]
 env:
   this : is
   this2 : is2
-
+  this3 : ${{ secrets.TEST }}
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      #- uses: actions/setup-node@v1
-      # - env:
-      #     this : is
-      #     this2 : is2
       - run: |
-          echo "${{ env.this }} is pen ${{ env.this2 }} $SUPER_SECRET"
+          echo "${{ env.this }} is pen ${{ env.this3 }} $SUPER_SECRET"
           echo "this is pen" | base64
         env: 
           SUPER_SECRET: ${{ secrets.TEST }}
