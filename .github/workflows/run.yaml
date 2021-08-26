@@ -9,9 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      # - if: github.event_name == 'push'
+      #   run: echo "TEST=main >> $GITHUB_ENV"
+
+
+
+
       - run: |
           echo "${{ env.this }} is pen ${{ env.this3 }} $SUPER_SECRET"
           echo "this is pen" | base64
+          echo "${ GITHUB_REF#refs/heads/ }"
         env: 
           SUPER_SECRET: ${{ secrets.TEST }}
       - run: |
