@@ -1,13 +1,20 @@
 name: learn-github-actions
 on: [push]
+env:
+  this : is
+  this2 : is2
+
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      # - env:
+      #     this : is
+      #     this2 : is2
       - run: |
-          echo "this is pen"
+          echo "${{ env.this }} is pen ${{ env.this2 }}"
           echo "this is pen" | base64
       - run: |
           npm --version
