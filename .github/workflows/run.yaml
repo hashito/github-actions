@@ -6,15 +6,10 @@ env:
   this3 : ${{ secrets.TEST }}
 jobs:
   check-bats-version:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # - if: github.event_name == 'push'
-      #   run: echo "TEST=main >> $GITHUB_ENV"
-
-
-
-
       - run: |
           echo "${{ env.this }} is pen ${{ env.this3 }} $SUPER_SECRET"
           echo "this is pen" | base64
@@ -26,3 +21,11 @@ jobs:
       - run: |
           npm --version
           node --version
+
+  check-bats-version2:
+    if: ${{ github.ref == 'refs/heads/main2' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          echo "refs/heads/main2"
