@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: |
-          echo "(1) ths is env=$ENV_1"
-        env: 
-          ENV_1: ${{github.ref}}
-        id: action1
+      - run: echo "ENV_1=main" >> $GITHUB_ENV
+        if: github.ref == 'refs/heads/main'
+      - run: echo "ENV_1=main2" >> $GITHUB_ENV
+        if: github.ref == 'refs/heads/main2'
+      - run: echo "branch=$ENV_1"
