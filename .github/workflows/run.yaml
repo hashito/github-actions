@@ -14,6 +14,8 @@ jobs:
           echo "this is pen" | base64
           echo "${{ github.head_ref }}"
           echo "$head_ref"
+          export newenv="hashito"
+          echo "$newenv"
         env: 
           SUPER_SECRET: ${{ secrets.TEST }}
           head_ref: ${{ github.head_ref }}
@@ -22,4 +24,7 @@ jobs:
           npm --version
           node --version
         if: ${{ github.ref == 'refs/heads/main2' }}
+      - run: |
+          echo "run3"
+          echo "$newenv"
 
