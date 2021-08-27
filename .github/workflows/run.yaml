@@ -16,7 +16,7 @@ jobs:
           echo "$head_ref"
           echo "$head_ref2"
           export newenv="hashito"
-          echo "$GITHUB_HEAD_REF"
+          echo "${GITHUB_HEAD_REF}"
         env: 
           SUPER_SECRET: ${{ secrets.TEST }}
           head_ref: ${{ github.head_ref }}
