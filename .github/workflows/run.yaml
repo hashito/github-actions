@@ -1,31 +1,13 @@
 name: learn-github-actions
 on: [push]
-env:
-  this : is
-  this2 : is2
-  this3 : ${{ secrets.TEST }}
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo "${{ env.this }} is pen ${{ env.this3 }} $SUPER_SECRET"
-          echo "this is pen" | base64
-          echo "1 ${{ github.ref }}"
-          echo "2 $head_ref"
-          echo "3 $head_ref2"
-          export newenv="hashito"
-          echo "Deploying to production server on branch $GITHUB_REF"
+          echo "(1) ths is env=$ENV_1"
         env: 
-          SUPER_SECRET: ${{ secrets.TEST }}
-          head_ref: ${{ github.ref }}
-        if: ${{ github.ref == 'refs/heads/main' }}
+          ENV_1: hashito
       - run: |
-          npm --version
-          node --version
-        if: ${{ github.ref == 'refs/heads/main2' }}
-      - run: |
-          echo "run3"
-          echo "$newenv"
-
+          echo "(2) ths is env=$ENV_1"
