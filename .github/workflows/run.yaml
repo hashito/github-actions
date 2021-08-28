@@ -10,8 +10,7 @@ jobs:
           python-version: '3.8'
           architecture: 'x64'
       - run: |
-          cd selenium
           pip install get-chrome-driver --upgrade
+          pip install -r selenium/requirements.txt
           get-chrome-driver --auto-download --extract
-          pip install -r requirements.txt
-          python main.py
+          python selenium/main.py
