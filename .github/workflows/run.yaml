@@ -1,7 +1,7 @@
-name: learn-github-actions
+name: selenium-github-actions
 on: [push]
 jobs:
-  check-bats-version:
+  selenium:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
