@@ -2,7 +2,7 @@ import chromedriver_binary # nopa
 from selenium import webdriver
 def driver_init():
     options = webdriver.ChromeOptions()
-    #options.add_argument('--headless')
+    options.add_argument('--headless')
     print('connectiong to remote browser...')
     return webdriver.Chrome(options=options)
 
