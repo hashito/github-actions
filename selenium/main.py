@@ -12,8 +12,8 @@ def driver_init():
     return webdriver.Chrome(options=options)
 
 driver = driver_init()
-driver.get('https://zenn.dev')
-print(driver.find_element_by_xpath('//*[@id="tech-trend"]/div/div[2]/div/div[1]/article/div/a[1]/h2').text)
+driver.get('https://hashito.biz/')
+print(driver.find_element_by_xpath('/html/body/div[1]/div/section/div/div/h2').text)
 
 
 print(driver.current_url)
