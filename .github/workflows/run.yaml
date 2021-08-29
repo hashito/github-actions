@@ -12,5 +12,4 @@ jobs:
       - run: |
           pip install get-chrome-driver --upgrade
           pip install -r selenium/requirements.txt
-          get-chrome-driver --auto-download --extract
           python selenium/main.py
