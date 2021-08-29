@@ -13,7 +13,7 @@ def driver_init():
 
 driver = driver_init()
 driver.get('https://zenn.dev')
-print(driver.find_element_by_xpath("//*[@id="tech-trend"]/div/div[2]/div/div[1]/article/div/a[1]/h2").text)
+print(driver.find_element_by_xpath('//*[@id="tech-trend"]/div/div[2]/div/div[1]/article/div/a[1]/h2').text)
 
 
 print(driver.current_url)
